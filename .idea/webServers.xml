@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2a80e9d8-b5ea-4acd-8231-0ee4f6e6e123" name="starkegroup.azwebsolutions.co.nz" url="http://starkegroup.azwebsolutions.co.nz">
+        <fileTransfer host="112.109.81.146" port="21" rootFolder="/starkegroup.azwebsolutions.co.nz/">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
