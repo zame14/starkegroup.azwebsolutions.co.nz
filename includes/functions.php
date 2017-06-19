@@ -61,10 +61,10 @@ function request($name) {
 }
 
 function sendContactEmail($full_name, $email, $phone, $message) {
-    $sFrom		= 'aaron.zame@gmail.com';
+    $sFrom		= 'hudson@cubikglobal.com';
     $sFromName	= 'Stärke Group Ltd';
-    $sTo 		= 'aaron.zame@gmail.com';
-    $sToName 	= 'aaron.zame@gmail.com';
+    $sTo 		= 'hudson@cubikglobal.com';
+    $sToName 	= 'hudson@cubikglobal.com';
     $sSubject 	= 'Contact Us - ' . $full_name;
     $emailBody = '
     <html>
@@ -114,10 +114,10 @@ function sendContactEmail($full_name, $email, $phone, $message) {
 }
 
 function sendBrochureEmail($full_name, $email) {
-    $sFrom		= 'aaron.zame@gmail.com';
+    $sFrom		= 'hudson@cubikglobal.com';
     $sFromName	= 'Stärke Group Ltd';
-    $sTo 		= 'aaron.zame@gmail.com';
-    $sToName 	= 'aaron.zame@gmail.com';
+    $sTo 		= 'hudson@cubikglobal.com';
+    $sToName 	= 'hudson@cubikglobal.com';
     $sSubject 	= 'New Brochure Download - ' . $full_name;
     $emailBody = '
     <html>

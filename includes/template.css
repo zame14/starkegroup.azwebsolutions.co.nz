@@ -87,6 +87,7 @@ ul {
 }
 #main .buttons-wrapper a.request-brochure {
     right: 0;
+    display: none;
 }
 #main .buttons-wrapper a.request-brochure:before {
     font-family: FontAwesome;
@@ -110,7 +111,7 @@ ul {
     min-height: 100%;
     position: relative;
 }
-.pt-page-2 #main, .pt-page-3 #main {
+.pt-page-2 #main, #main.brochure-template {
     position: absolute;
     left: 0;
     top: 0;
@@ -118,31 +119,31 @@ ul {
     height: 100%;
     background-color: #00debc;
 }
-.pt-page-2 #main .outer-wrapper, .pt-page-3 #main .outer-wrapper {
+.pt-page-2 #main .outer-wrapper, #main.brochure-template .outer-wrapper {
     top: 50%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     position: absolute;
     width: 100%;
 }
-.pt-page-2 #main .intro-wrapper, .pt-page-3 #main .intro-wrapper {
+.pt-page-2 #main .intro-wrapper, #main.brochure-template .intro-wrapper {
     margin-top: 0;
     border-color: #ffffff;
     margin-bottom: 55px;
 }
-.pt-page-2 #main .intro-wrapper h2, .pt-page-3 #main .intro-wrapper h2 {
+.pt-page-2 #main .intro-wrapper h2, #main.brochure-template .intro-wrapper h2 {
     color: #ffffff;
 }
-.pt-page-2 #main .contact-details-wrapper .logo, .pt-page-3 #main .contact-details-wrapper .logo {
+.pt-page-2 #main .contact-details-wrapper .logo, #main.brochure-template .contact-details-wrapper .logo {
     margin-bottom: 40px;
     display: block;
 }
-.pt-page-2 #main .contact-details-wrapper ul li, .pt-page-3 #main .contact-details-wrapper ul li {
+.pt-page-2 #main .contact-details-wrapper ul li, #main.brochure-template .contact-details-wrapper ul li {
     font-size: 12px;
     line-height: 18px;
     color: #ffffff;
 }
-.pt-page-2 #main .contact-details-wrapper ul li a, .pt-page-3 #main .contact-details-wrapper ul li a {
+.pt-page-2 #main .contact-details-wrapper ul li a, #main.brochure-template .contact-details-wrapper ul li a {
     color: #ffffff;
 }
 .contact-form .form-control {
@@ -183,7 +184,7 @@ ul {
     color: #ffffff;
     font-weight: bold;
 }
-.pt-page-3 .cta-form-success p {
+#main.brochure-template .cta-form-success p {
     margin-bottom: 20px;
 }
 .name-field, .email-field, .phone-field, .message-field {
@@ -236,10 +237,10 @@ ul {
 .close-button-wrapper-xs {
     display: none;
 }
-.pt-page-3 .submit-wrapper {
+#main.brochure-template .submit-wrapper {
     margin-bottom: 30px;
 }
-.pt-page-3 .contact-form, .pt-page-3 .contact-details-wrapper {
+#main.brochure-template .contact-form, #main.brochure-template .contact-details-wrapper {
     margin: 0 auto;
     width: 460px;
 }
@@ -374,18 +375,18 @@ ul {
 
 @-webkit-keyframes moveToBottom {
     from { }
-    to { -webkit-transform: translateY(100%); }
+    to { -webkit-transform: translateY(0%); }
 }
 @keyframes moveToBottom {
     from { }
-    to { -webkit-transform: translateY(100%); transform: translateY(100%); }
+    to { -webkit-transform: translateY(0%); transform: translateY(0%); }
 }
 
 @-webkit-keyframes moveFromBottom {
-    from { -webkit-transform: translateY(100%); }
+    from { -webkit-transform: translateY(0%); }
 }
 @keyframes moveFromBottom {
-    from { -webkit-transform: translateY(100%); transform: translateY(100%); }
+    from { -webkit-transform: translateY(0%); transform: translateY(0%); }
 }
 
 @media screen and (max-width: 1007px) {
@@ -445,14 +446,14 @@ ul {
         padding: 0 10vw;
         height: auto;
     }
-    .pt-page-2 #main .intro-wrapper, .pt-page-3 #main .intro-wrapper {
+    .pt-page-2 #main .intro-wrapper, #main.brochure-template .intro-wrapper {
         border: 0;
         margin-bottom: 20px;
     }
     .pt-page-2 #main .contact-details-wrapper {
         display: none;
     }
-    .pt-page-2 #main .outer-wrapper, .pt-page-3 #main .outer-wrapper {
+    .pt-page-2 #main .outer-wrapper, #main.brochure-template .outer-wrapper {
         top: 0;
         -webkit-transform: translateY(0);
         transform: translateY(0);
@@ -473,11 +474,11 @@ ul {
     .contact-details-wrapper.visible-xs {
         padding-left: 20px;
     }
-    .pt-page-3 .contact-form, .pt-page-3 .contact-details-wrapper {
+    #main.brochure-template .contact-form, #main.brochure-template .contact-details-wrapper {
         width: 100%;
         margin-top: 30px;
     }
-    .pt-page-3 #main .contact-details-wrapper .logo {
+    #main.brochure-template .contact-details-wrapper .logo {
         display: none;
     }
 }
@@ -500,4 +501,7 @@ ul {
     @keyframes moveFromTop {
         from { -webkit-transform: translateY(-200%); transform: translateY(-200%); }
     }
+}
+#panel-393-1-0-0 .primrose-sow-masonry-grid .primrose-sow-masonry-grid-item:nth-child(1) .primrose-sow-masonry-grid-item-title {
+    font-size: 30px;
 }

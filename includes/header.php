@@ -53,3 +53,48 @@ if(request('ajax') == "download_brochure") {
     header('Accept-Ranges: bytes');
     @readfile($file);
 }
+
+if(request('ajax') == "transitionPage") {
+    $html2 = '';
+    if(request('pageid') == 1) {
+        $html2 = '
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="intro-wrapper">
+                <h2>We would love to hear about your project or tell you a little more about our product, so send us a message below and we will get in touch.</h2>
+            </div>
+            <div class="contact-details-wrapper">
+                <a href="javascript:;" class="close-me logo" data-animation="2"><img src="/images/starke-logo-white.svg" alt="Stärke Group Ltd" /></a>
+                <ul>
+                    <li><b>Stärke Group Ltd</b></li>
+                    <li><a href="https://www.google.co.nz/maps/place/4+Wilco+Pl,+Wiri,+Auckland+2104/@-37.0119681,174.8427,17z/data=!3m1!4b1!4m5!3m4!1s0x6d0d4e1d2f8b9263:0x6a214e43343b101c!8m2!3d-37.0119724!4d174.8448887" target="_blank">4 Wilco Place, Wiri, Auckland 2104, New Zealand</a></li>
+                    <li><a href="tel:06421538708">+64 21 538 708</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 no-padding-xs">
+            ' . contactUs() . '
+        </div>
+        <div class="contact-details-wrapper visible-xs">
+            <ul>
+                <li><b>Stärke Group Ltd</b></li>
+                <li><a href="https://www.google.co.nz/maps/place/4+Wilco+Pl,+Wiri,+Auckland+2104/@-37.0119681,174.8427,17z/data=!3m1!4b1!4m5!3m4!1s0x6d0d4e1d2f8b9263:0x6a214e43343b101c!8m2!3d-37.0119724!4d174.8448887" target="_blank">4 Wilco Place, Wiri, Auckland 2104, New Zealand</a></li>
+                <li><a href="tel:06421538708">+64 21 538 708</a></li>
+            </ul>
+        </div>';
+    } elseif(request('pageid') == 2) {
+        $html2 = '      
+        <div class="col-xs-12 col-md-12 no-padding-xs">
+            ' . brochureDownload() . '
+            <div class="contact-details-wrapper">
+                <a href="javascript:;" class="close-me logo" data-animation="2"><img src="/images/starke-logo-white.svg" alt="Stärke Group Ltd" /></a>
+                <ul>
+                    <li><b>Stärke Group Ltd</b></li>
+                    <li><a href="https://www.google.co.nz/maps/place/4+Wilco+Pl,+Wiri,+Auckland+2104/@-37.0119681,174.8427,17z/data=!3m1!4b1!4m5!3m4!1s0x6d0d4e1d2f8b9263:0x6a214e43343b101c!8m2!3d-37.0119724!4d174.8448887" target="_blank">4 Wilco Place, Wiri, Auckland 2104, New Zealand</a></li>
+                    <li><a href="tel:099518964">+64 9 951 8964</a></li>
+                </ul>
+            </div>
+        </div>';
+    }
+echo $html2;
+    exit;
+}

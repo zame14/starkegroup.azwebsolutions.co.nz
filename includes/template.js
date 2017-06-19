@@ -21,33 +21,49 @@ $(document).ready(function(){
     init();
 
     $(".contact-us").click(function() {
-       // if($(document).width() > 767) {
+        $(".pt-page-2 #main").removeClass("brochure-template");
+        var pageid = $(this).data('page');
+        $.ajax({
+        url: "?ajax=transitionPage&pageid=" + pageid,
+         success: function (response) {
+            $(".pt-page-2 #main .inner-content-wrapper").html(response);
+         }
+        });
+        // if($(document).width() > 767) {
             var h = $(document).height();
             $(".pt-page").css('height',h+'px');
        // }
         var animation = $(this).data('animation');
-        nextPage( animation, 0 );
+        nextPage( animation );
     });
 
     $(".request-brochure").click(function() {
+        $(".pt-page-2 #main").addClass("brochure-template");
+        var pageid = $(this).data('page');
+        $.ajax({
+            url: "?ajax=transitionPage&pageid=" + pageid,
+            success: function (response) {
+                $(".pt-page-2 #main .inner-content-wrapper").html(response);
+            }
+        });
         //if($(document).width() > 767) {
             var h = $(document).height();
             $(".pt-page").css('height',h+'px');
        // }
         var animation = $(this).data('animation');
-        nextPage( animation, 1 );
+        nextPage( animation );
     });
-    $(".close-me").click(function() {
+    $(".pt-page").on("click", ".close-me", function() {
         //if($(document).width() > 767) {
             var h = $(document).height();
             $(".pt-page").css('height',h+'px');
         //}
         var animation = $(this).data('animation');
-        nextPage( animation, 2 );
+        nextPage( animation );
         resetForm();
-        setTimeout(function() {
-            $(".pt-page-2").removeClass('pt-page-current');
-        }, 50);
+       // setTimeout(function() {
+           // $(".pt-page-2").removeClass('pt-page-current');
+        //}, 50);
     });
     function init() {
 
@@ -58,12 +74,10 @@ $(document).ready(function(){
         $pages.eq(current).addClass('pt-page-current');
     }
 
-    function nextPage( animation, current ) {
-
+    function nextPage( animation ) {
         if( isAnimating ) {
             return false;
         }
-
         isAnimating = true;
         var $currPage = $pages.eq( current );
 
@@ -137,7 +151,6 @@ $(document).ready(function(){
         $outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
         $inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
     }
-
 });
 function contactUs(form) {
     $.post('?ajax=contact_us', $(form).serialize(), function (response) {
